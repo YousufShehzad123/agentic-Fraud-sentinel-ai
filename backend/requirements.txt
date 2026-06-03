@@ -6,3 +6,4 @@ scikit-learn==1.5.2
 numpy==1.26.4
 anthropic==0.40.0
 python-dotenv==1.0.1
+joblib==1.4.2
