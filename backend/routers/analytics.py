@@ -1,12 +1,11 @@
 from datetime import datetime, timedelta
-from collections import defaultdict
 from typing import Dict
 
 from fastapi import APIRouter, Depends, Query
+from sqlalchemy import desc, func
 from sqlalchemy.orm import Session
-from sqlalchemy import func, desc
 
-from database import get_db, Transaction, Alert, Case
+from database import Alert, Case, Transaction, get_db
 from helpers import tx_to_dict
 from pipeline import WEIGHTS
 

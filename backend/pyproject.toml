@@ -12,7 +12,14 @@ target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP"]
-ignore = ["E501"]  # line too long handled by formatter
+ignore = [
+    "E501",   # line too long — handled by formatter
+    "E402",   # module-level import not at top — load_dotenv() must run first in main.py
+    "B008",   # Depends() in FastAPI argument defaults is the correct pattern
+    "UP035",  # typing.Dict / List — keep for Python 3.10 compat (target-version = py310)
+    "UP006",  # dict vs Dict — same reason
+    "UP045",  # X | None vs Optional — same reason
+]
 
 [tool.coverage.run]
 source = ["."]

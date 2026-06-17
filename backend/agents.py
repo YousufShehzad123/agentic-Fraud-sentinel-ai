@@ -1,7 +1,6 @@
 import os
-import asyncio
-from typing import Dict, Any, Optional
 from datetime import datetime
+from typing import Any, Dict
 
 ANTHROPIC_AVAILABLE = False
 anthropic_client = None
@@ -84,7 +83,6 @@ async def get_agent_reasoning(tx: Dict[str, Any], ml_results: Dict[str, Any]) ->
         return ml_results.get("agentReasoning", "ML pipeline decision.")
 
     try:
-        composite_score = ml_results.get("riskScore", 0)
         action = ml_results.get("action", "MONITOR")
 
         prompt = _build_agent_prompt(tx, ml_results, "Senior Fraud Analyst")

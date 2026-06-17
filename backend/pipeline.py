@@ -14,13 +14,14 @@ Why this architecture beats a single model:
   Autoencoder catches distribution shift when new fraud patterns emerge.
 """
 import time
-import numpy as np
-from typing import Dict, List, Any, Optional, Tuple
 from datetime import datetime, timedelta
+from typing import Any, Dict, List, Optional, Tuple
 
-from models.velocity import VelocityAnalyzer
-from models.gaussian import WelfordGaussianProfiler
+import numpy as np
+
 from models.autoencoder import SimpleAutoencoder
+from models.gaussian import WelfordGaussianProfiler
+from models.velocity import VelocityAnalyzer
 from models.xgboost_scorer import XGBoostScorer
 
 FEATURE_NAMES = [

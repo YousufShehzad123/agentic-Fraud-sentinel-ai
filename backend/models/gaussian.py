@@ -1,5 +1,6 @@
+from typing import Any, Dict, Tuple
+
 import numpy as np
-from typing import Dict, Any, Tuple
 
 
 class WelfordGaussianProfiler:

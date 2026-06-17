@@ -1,11 +1,12 @@
 from dotenv import load_dotenv
+
 load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_db
-from routers import transactions, alerts, cases, analytics, agent
+from routers import agent, alerts, analytics, cases, transactions
 
 app = FastAPI(
     title="SentinelAI Fraud Detection API",

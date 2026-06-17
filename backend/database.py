@@ -1,8 +1,8 @@
 from datetime import datetime
-from typing import Optional, List
-from sqlalchemy import create_engine, Column, Integer, Float, String, Boolean, DateTime, ForeignKey, Text
+
+from sqlalchemy import Boolean, Column, DateTime, Float, ForeignKey, Integer, String, Text, create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import relationship, sessionmaker
 
 DATABASE_URL = "sqlite:///./sentinel.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})

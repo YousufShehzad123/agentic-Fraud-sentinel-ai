@@ -1,11 +1,10 @@
 """Serialization helpers and DB side-effect helpers shared across routers."""
 import json
-from datetime import datetime
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
 
 from sqlalchemy.orm import Session
 
-from database import Transaction, Alert, Case, CaseTransaction
+from database import Alert, Case, CaseTransaction, Transaction
 
 
 def tx_to_dict(tx: Transaction) -> Dict[str, Any]:

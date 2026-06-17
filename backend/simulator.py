@@ -1,8 +1,7 @@
 import random
 import string
 import time
-from datetime import datetime, timedelta
-from typing import Dict, List, Any
+from typing import Any, Dict, List
 
 # Easypaisa / JazzCash Pakistan context
 CITIES = [

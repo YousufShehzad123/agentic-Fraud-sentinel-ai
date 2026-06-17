@@ -3,10 +3,10 @@ from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from sqlalchemy.orm import Session
 from sqlalchemy import desc
+from sqlalchemy.orm import Session
 
-from database import get_db, Case
+from database import Case, get_db
 from helpers import case_to_dict
 
 router = APIRouter(prefix="/api", tags=["cases"])

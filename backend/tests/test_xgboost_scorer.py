@@ -2,7 +2,7 @@
 import numpy as np
 import pytest
 
-from models.xgboost_scorer import XGBoostScorer, XGB_AVAILABLE
+from models.xgboost_scorer import XGB_AVAILABLE, XGBoostScorer
 
 
 @pytest.fixture

@@ -1,6 +1,6 @@
-from typing import Dict, Tuple
 from collections import defaultdict, deque
 from datetime import datetime, timedelta
+from typing import Dict, Tuple
 
 
 class VelocityAnalyzer:

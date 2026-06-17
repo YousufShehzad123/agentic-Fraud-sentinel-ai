@@ -1,5 +1,6 @@
+from typing import Any, Optional, Tuple
+
 import numpy as np
-from typing import Tuple, Optional, Any
 
 try:
     import xgboost as xgb
@@ -90,11 +91,16 @@ class XGBoostScorer:
         amount_norm     = float(features[5])
 
         logit = -3.0
-        if amount_log > np.log1p(50_000):        logit += 1.4  # > PKR 50k
-        if is_international > 0.5:               logit += 1.2  # foreign location
-        if is_unknown_device > 0.5:              logit += 0.9  # unknown device
-        if hour_norm < 0.26 or hour_norm > 0.91: logit += 0.7  # off-hours (before 6am or after 9pm)
-        if amount_norm > 0.4:                    logit += 0.6  # > PKR 200k
+        if amount_log > np.log1p(50_000):
+            logit += 1.4   # > PKR 50k
+        if is_international > 0.5:
+            logit += 1.2   # foreign location
+        if is_unknown_device > 0.5:
+            logit += 0.9   # unknown device
+        if hour_norm < 0.26 or hour_norm > 0.91:
+            logit += 0.7   # off-hours (before 6am or after 9pm)
+        if amount_norm > 0.4:
+            logit += 0.6   # > PKR 200k
 
         prob = float(1.0 / (1.0 + np.exp(-logit)))
         return prob, f"Heuristic score {prob:.1%} (XGBoost not installed — run: pip install xgboost>=2.0)"

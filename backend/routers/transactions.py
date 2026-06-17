@@ -1,16 +1,16 @@
 import json
 from datetime import datetime
-from typing import List, Optional, Dict, Any
+from typing import Dict, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
-from sqlalchemy.orm import Session
 from sqlalchemy import desc
+from sqlalchemy.orm import Session
 
-from database import get_db, Transaction
-from pipeline import pipeline
-from helpers import tx_to_dict, create_alert, create_case
 from agents import get_agent_reasoning
+from database import Transaction, get_db
+from helpers import create_alert, create_case, tx_to_dict
+from pipeline import pipeline
 from simulator import generate_batch
 
 router = APIRouter(prefix="/api", tags=["transactions"])

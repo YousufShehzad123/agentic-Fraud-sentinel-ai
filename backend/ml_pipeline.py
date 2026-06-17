@@ -11,8 +11,8 @@ The pipeline has been refactored into dedicated modules:
 Import directly from those modules.  This file exists so that any
 `from ml_pipeline import X` import sites continue to resolve without edits.
 """
-from pipeline import FraudPipeline, pipeline, ACTION_THRESHOLDS, WEIGHTS, FEATURE_NAMES  # noqa: F401
-from models.velocity import VelocityAnalyzer          # noqa: F401
-from models.gaussian import WelfordGaussianProfiler   # noqa: F401
-from models.autoencoder import SimpleAutoencoder      # noqa: F401
-from models.xgboost_scorer import XGBoostScorer       # noqa: F401
+from models.autoencoder import SimpleAutoencoder  # noqa: F401
+from models.gaussian import WelfordGaussianProfiler  # noqa: F401
+from models.velocity import VelocityAnalyzer  # noqa: F401
+from models.xgboost_scorer import XGBoostScorer  # noqa: F401
+from pipeline import ACTION_THRESHOLDS, FEATURE_NAMES, WEIGHTS, FraudPipeline, pipeline  # noqa: F401
